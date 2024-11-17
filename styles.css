@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+#hmumad {
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px #ff0000;
+    transition: color 0.05s, text-shadow 0.05s;
+    color: #000;
+}
+
+nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border: 2px solid #ff0000;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.game-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#doomImage {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#message {
+    color: #ff0000;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px #000;
+}
+
+/* Animation background */
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path_to_your_animated_background.gif');
+    background-size: cover;
+    z-index: 0;
+    animation: animatedBackground 10s linear infinite;
+}
